@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/v1/tasks")
 @RequiredArgsConstructor
@@ -30,8 +31,8 @@ public class TaskController {
         return ResponseEntity.ok(taskMapper.mapToTaskDto(dbService.getTask(taskId)));
     }
 
-    @DeleteMapping
-    public ResponseEntity<Object> deleteTask(Long taskId) {
+    @DeleteMapping(value = "{taskId}")
+    public ResponseEntity<Object> deleteTask(@PathVariable Long taskId) {
         dbService.deleteTask(taskId);
         return ResponseEntity.ok().build();
     }

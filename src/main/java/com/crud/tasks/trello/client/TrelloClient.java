@@ -12,7 +12,6 @@ import org.springframework.web.util.UriComponentsBuilder;
 import java.net.URI;
 import java.util.*;
 
-
 @Component
 @RequiredArgsConstructor
 public class TrelloClient {

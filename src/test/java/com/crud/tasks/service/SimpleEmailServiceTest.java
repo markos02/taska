@@ -29,7 +29,7 @@ class SimpleEmailServiceTest {
         SimpleMailMessage mailMessage = new SimpleMailMessage();
         mailMessage.setTo(mail.getMailTo());
         mailMessage.setSubject(mail.getSubject());
-        mailMessage.setText(mail.getSubject());
+        mailMessage.setText(mail.getMessage());
 
         //When
         simpleEmailService.send(mail);
@@ -52,7 +52,7 @@ class SimpleEmailServiceTest {
         SimpleMailMessage mailMessage = new SimpleMailMessage();
         mailMessage.setTo(mail.getMailTo());
         mailMessage.setSubject(mail.getSubject());
-        mailMessage.setText(mail.getSubject());
+        mailMessage.setText(mail.getMessage());
         mailMessage.setCc(mail.getToCc());
 
         //When

@@ -8,7 +8,7 @@ WORKDIR /tasks
 COPY . .
 
 RUN addgroup -g 1001 -S appuser && adduser -u 1001 -S appuser -G appuser
-RUN chown -R 1001:1001 /usr/src/app
+RUN chown -R 1001:1001 /tasks
 RUN ls
 USER 1001
 

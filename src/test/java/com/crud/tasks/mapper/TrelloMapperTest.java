@@ -62,18 +62,22 @@ class TrelloMapperTest {
         TrelloListDto trelloListDto1 = new TrelloListDto("1", "Test list 1", false);
         TrelloListDto trelloListDto2 = new TrelloListDto("2", "Test list 2", false);
         TrelloListDto trelloListDto3 = new TrelloListDto("3", "Test list 3", false);
+        TrelloListDto trelloListDto4 = new TrelloListDto();
 
         List<TrelloListDto> trelloListDtoList = new ArrayList<>();
         trelloListDtoList.add(trelloListDto1);
         trelloListDtoList.add(trelloListDto2);
         trelloListDtoList.add(trelloListDto3);
+        trelloListDtoList.add(trelloListDto4);
 
         //When
         List<TrelloList> mappedList = trelloMapper.mapToList(trelloListDtoList);
 
         //Then
-        assertEquals(3, mappedList.size());
+        assertEquals(4, mappedList.size());
+        assertEquals("1", mappedList.get(0).getId());
         assertEquals("Test list 1", mappedList.get(0).getName());
+        assertEquals(false, mappedList.get(0).isClosed());
     }
 
     @Test
